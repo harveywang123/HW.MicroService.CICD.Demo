@@ -1,0 +1,46 @@
+﻿version: '3.7'
+services:
+    service1:
+        container_name: serviceInstance_5726
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Production
+        build:
+            context: /root/testProject/third/sourceCode/HW.MicroService.Docker
+        image: compose-net5.0v1.202125
+        ports:
+            - 5726:80/tcp
+        volumes:
+            - /root/testProject/third/config/appsettings/appsettings5726.json:/app/appsettings.json
+
+    service2:
+        container_name: serviceInstance_5727
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Production
+        image: compose-net5.0v1.202125
+        ports:
+            - 5727:80/tcp
+        command: ["dotnet","/app/publish/HW.MicroService.ServiceInstance.dll"]
+        volumes:
+            - /root/testProject/third/config/appsettings/appsettings5727.json:/app/appsettings.json
+
+    service3:
+        container_name: serviceInstance_5728
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Production
+        image: compose-net5.0v1.202125
+        ports:
+            - 5728:80/tcp
+        command: ["dotnet","/app/publish/HW.MicroService.ServiceInstance.dll"]
+        volumes:
+            - /root/testProject/third/config/appsettings/appsettings5728.json:/app/appsettings.json
+
+    service4:
+        container_name: serviceInstance_5729
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Production
+        image: compose-net5.0v1.202125
+        ports:
+            - 5729:80/tcp
+        command: ["dotnet","/app/publish/HW.MicroService.ServiceInstance.dll"]
+        volumes:
+            - /root/testProject/third/config/appsettings/appsettings5729.json:/app/appsettings.json

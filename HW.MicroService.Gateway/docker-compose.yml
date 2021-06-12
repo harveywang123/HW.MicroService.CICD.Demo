@@ -1,0 +1,39 @@
+﻿version: '3.7'
+services:
+    service1:
+        container_name: serviceOcelot_6297_GateWay
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Production
+        build:
+            context: /root/testProject/third/sourceCode/gateway
+            dockerfile: HW.MicroService.Gateway/Dockerfile
+        image: compose-net5.0v1.202125-gateway
+        ports:
+            - 6297:80/tcp
+
+    service2:
+        container_name: serviceOcelot_6298_GateWay
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Production
+        image: compose-net5.0v1.202125-gateway
+        ports:
+            - 6298:80/tcp
+        command: ["dotnet","/app/publish/HW.MicroService.Gateway.dll"]
+
+    service3:
+        container_name: serviceOcelot_6299_GateWay
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Production
+        image: compose-net5.0v1.202125-gateway
+        ports:
+            - 6299:80/tcp
+        command: ["dotnet","/app/publish/HW.MicroService.Gateway.dll"]
+
+    nginx:
+        container_name: serviceOcelotNginx_8083_GateWay
+        image: nginx:latest
+        ports:
+            - 8083:80/tcp
+        restart: always
+        volumes:
+            - /root/testProject/third/config/gatewayNginx/nginx.conf:/etc/nginx/nginx.conf

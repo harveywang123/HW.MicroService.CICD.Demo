@@ -1,0 +1,29 @@
+﻿{
+  //************************************* Ocelot 网关 + 认证中心 + Consul 服务发现 *************************************
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/{url}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/gate/{url}",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "UseServiceDiscovery": true,
+      "ServiceName": "HWService",
+      "LoadBalancerOptions": { "Type": "RoundRobin" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "UserGatewayKey",
+        "AllowedScops": [ "User.Get", "Health.Check" ]
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://192.168.1.103:6299",
+    "ServiceDiscoveryProvider": {
+      "Scheme": "http",
+      "Host": "192.168.1.103",
+      "Port": 8089,
+      "Type": "Consul",
+      "PollingInterval": 1000, //轮训 Consul，频率毫秒
+      "Token": "footoken" //需要ACL的话
+    }
+  }
+}

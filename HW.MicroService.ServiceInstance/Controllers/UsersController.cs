@@ -23,6 +23,7 @@ namespace HW.MicroService.ServiceInstance.Controllers
         public UsersController(ILogger<UsersController> logger, IUserService userService, IConfiguration configuration)
         {
             _logger = logger;
+
             _userService = userService;
             _configuration = configuration;
         }

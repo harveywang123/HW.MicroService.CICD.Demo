@@ -1,11 +1,11 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:5.0-buster-slim AS base
+FROM 192.168.1.102/hw.microservice/aspnet-core5:v1 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/core/sdk:5.0-buster-slim AS build
+FROM 192.168.1.102/hw.microservice/sdk-core5:v1 AS build
 WORKDIR /src
 COPY ["HW.MicroService.ServiceInstance/HW.MicroService.ServiceInstance.csproj", "HW.MicroService.ServiceInstance/"]
 COPY ["HW.MicroService.Models/HW.MicroService.Models.csproj", "HW.MicroService.Models/"]

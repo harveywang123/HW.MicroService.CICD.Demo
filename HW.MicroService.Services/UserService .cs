@@ -21,11 +21,11 @@ namespace HW.MicroService.Services
         public UserService()
         {
             dataList = new List<User>()
-            { new User {ID=1,Name="黄飞鸿3",Account="HuangFeiHong2",Password="HuangFeiHong123456",Email="huangFeiHong@sina.com", Role="Admin", LoginTime=DateTime.Now },
-            new User {ID=2,Name="洪熙官3",Account="HongXiGuan2",Password="HongXiGuan54667",Email="HongXiGuan@sina.com", Role="Admin", LoginTime=DateTime.Now.AddDays(-5) },
-            new User {ID=3,Name="方世玉3",Account="FangShiYu2",Password="FangShiYu112233",Email="fangShiYu@163.com", Role="Admin", LoginTime=DateTime.Now.AddDays(-30) },
-            new User {ID=4,Name="苗翠花3",Account="MiaoCuiHua2",Password="MiaoCuiHua887766",Email="miaoCuiHua@sohu.com", Role="Admin", LoginTime=DateTime.Now.AddDays(-90) },
-            new User {ID=5,Name="严咏春3",Account="YanYongChun2",Password="YanYongChun09392",Email="yanYongChun@263.com", Role="Admin", LoginTime=DateTime.Now.AddMinutes(-50) }};
+            { new User {ID=1,Name="黄飞鸿4",Account="HuangFeiHong2",Password="HuangFeiHong123456",Email="huangFeiHong@sina.com", Role="Admin", LoginTime=DateTime.Now },
+            new User {ID=2,Name="洪熙官4",Account="HongXiGuan2",Password="HongXiGuan54667",Email="HongXiGuan@sina.com", Role="Admin", LoginTime=DateTime.Now.AddDays(-5) },
+            new User {ID=3,Name="方世玉4",Account="FangShiYu2",Password="FangShiYu112233",Email="fangShiYu@163.com", Role="Admin", LoginTime=DateTime.Now.AddDays(-30) },
+            new User {ID=4,Name="苗翠花4",Account="MiaoCuiHua2",Password="MiaoCuiHua887766",Email="miaoCuiHua@sohu.com", Role="Admin", LoginTime=DateTime.Now.AddDays(-90) },
+            new User {ID=5,Name="严咏春4",Account="YanYongChun2",Password="YanYongChun09392",Email="yanYongChun@263.com", Role="Admin", LoginTime=DateTime.Now.AddMinutes(-50) }};
         }
 
         /// <summary>
